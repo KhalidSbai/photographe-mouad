@@ -1,0 +1,56 @@
+[
+  {
+    "id": "architecture",
+    "name": "Architecture",
+    "images": [
+      "/images/architecture/DSC00078 copy.webp",
+      "/images/architecture/DSC00280.webp",
+      "/images/architecture/DSC00637 copy.webp",
+      "/images/architecture/DSC00657 copy.webp",
+      "/images/architecture/DSC01163.webp",
+      "/images/architecture/DSC02379-V2 copy.webp",
+      "/images/architecture/DSC02491-Edit copy.webp",
+      "/images/architecture/IMG_5445.webp",
+      "/images/architecture/IMG_5690.webp",
+      "/images/architecture/IMG_8101.webp"
+    ]
+  },
+  {
+    "id": "events",
+    "name": "Events",
+    "images": [
+      "/images/events/IMG_0757 copy.webp",
+      "/images/events/IMG_2658 copy.webp",
+      "/images/events/IMG_3029-3 copy 2.webp",
+      "/images/events/IMG_3029-3 copy 22.webp",
+      "/images/events/IMG_3204-2 copy.webp",
+      "/images/events/IMG_3273 copy.webp",
+      "/images/events/IMG_8490-11.webp",
+      "/images/events/IMG_91676 copy.webp"
+    ]
+  },
+  {
+    "id": "nature",
+    "name": "Nature",
+    "images": [
+      "/images/nature/sample1.jpg",
+      "/images/nature/sample2.jpg",
+      "/images/nature/sample3.jpg"
+    ]
+  },
+  {
+    "id": "portraits",
+    "name": "Portraits",
+    "images": [
+      "/images/portraits/sample1.jpg",
+      "/images/portraits/sample2.jpg"
+    ]
+  },
+  {
+    "id": "weddings",
+    "name": "Weddings",
+    "images": [
+      "/images/weddings/sample1.jpg"
+    ]
+  }
+]
