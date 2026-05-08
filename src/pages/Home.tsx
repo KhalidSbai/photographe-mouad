@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SEO from "../components/SEO";
 import imagesData from "../data/images.json";
 
 const specializations = imagesData
@@ -18,6 +19,11 @@ const publications = ["Vogue", "Elle", "Harper's Bazaar", "L'Officiel", "GQ"];
 export default function Home() {
   return (
     <div className="space-y-32 pb-32">
+      <SEO 
+        title="Sbai Mouad - Photographe Professionnel à Marrakech & Maroc"
+        description="Découvrez l'univers de Sbai Mouad, photographe professionnel à Marrakech. Spécialisé en photographie de mode, portrait, et reportage de mariage au Maroc."
+        canonicalUrl="/"
+      />
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
         <motion.div
@@ -27,22 +33,25 @@ export default function Home() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <img
-            src="https://images.unsplash.com/photo-1724371959066-307b8ea7e145?q=80&w=1632&auto=format&fit=crop&q=80&w=1200"
-            alt="Sbai Mouad Hero"
+            src="https://images.unsplash.com/photo-1724371959066-307b8ea7e145?q=80&w=1632&auto=format&fit=crop&q=80&w=1200&fm=webp"
+            alt="Sbai Mouad, Photographe Professionnel à Marrakech en plein shooting photo"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-black/20" />
         </motion.div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <motion.h1
-            className="text-white text-5xl md:text-8xl font-extrabold tracking-tighter uppercase mb-6"
+            className="text-white text-5xl md:text-8xl font-extrabold tracking-tighter uppercase mb-6 flex flex-col items-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Aura Narrative
+            <span className="text-sm md:text-base tracking-[0.3em] font-normal mb-4 opacity-80">Photographe Marrakech</span>
+            <span>Aura Narrative</span>
           </motion.h1>
           <motion.p
             className="text-white/80 text-xs md:text-sm uppercase tracking-[0.4em] font-light max-w-md"
@@ -105,9 +114,12 @@ export default function Home() {
               <div className="aspect-[3/4] overflow-hidden mb-6">
                 <img
                   src={spec.image}
-                  alt={spec.title}
+                  alt={`Service de ${spec.title} - Photographe Maroc`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  width={900}
+                  height={1200}
                 />
               </div>
               <h3 className="text-xl font-extrabold uppercase tracking-tighter mb-2">{spec.title}</h3>
@@ -142,8 +154,9 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 1.5 }}
         >
+          <h2 className="sr-only">L'approche de votre photographe de mariage et mode à Marrakech</h2>
           <p className="text-2xl md:text-4xl font-light italic leading-relaxed mb-12">
-            "La photographie n'est pas ce que l'on voit, mais ce que l'on ressent. À Marrakech, la lumière raconte des histoires que seul le silence peut entendre."
+            "La photographie n'est pas ce que l'on voit, mais ce que l'on ressent. Lors d'un shooting photo au Maroc ou pour un événement à Marrakech, la lumière raconte des histoires que seul le silence peut entendre."
           </p>
           <span className="text-xs uppercase tracking-[0.3em] font-bold">— Sbai Mouad</span>
         </motion.div>

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const services = [
   {
@@ -30,6 +31,11 @@ const services = [
 export default function Services() {
   return (
     <div className="pt-40 pb-32">
+      <SEO
+        title="Services Photographe Marrakech - Mode, Portrait & Lifestyle"
+        description="Services photo professionnels à Marrakech avec Sbai Mouad : mode éditoriale, portrait d'art, produit, lifestyle et contenu visuel pour marques au Maroc."
+        canonicalUrl="/services"
+      />
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
         <div className="max-w-3xl">
           <span className="text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6 block">Expertise</span>
@@ -59,6 +65,9 @@ export default function Services() {
                     alt={service.title} 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    width={1200}
+                    height={1600}
                   />
                 </motion.div>
               </div>

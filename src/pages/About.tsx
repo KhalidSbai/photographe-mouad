@@ -1,14 +1,20 @@
 import React from "react";
 import { motion } from "motion/react";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
     <div className="pt-40 pb-32">
+      <SEO 
+        title="À Propos - Sbai Mouad Photographe Maroc"
+        description="Découvrez l'histoire et la philosophie de Sbai Mouad, photographe professionnel basé à Marrakech. Un regard unique sur la photographie de portrait et de mode au Maroc."
+        canonicalUrl="/about"
+      />
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 items-center">
           <div className="space-y-12">
             <div>
-              <span className="text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6 block">L'Âme derrière l'objectif</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6 block">L'Âme derrière l'objectif - Photographe Maroc</span>
               <h1 className="text-5xl md:text-8xl font-extrabold tracking-tighter uppercase leading-[0.9]">
                 Sbai <br /> Mouad
               </h1>
@@ -45,10 +51,12 @@ export default function About() {
             className="aspect-[4/5] overflow-hidden bg-secondary/20 grayscale hover:grayscale-0 transition-all duration-1000"
           >
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200" 
-              alt="Sbai Mouad Portrait" 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp" 
+              alt="Sbai Mouad, Photographe Professionnel au Maroc - Portrait" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
+              fetchPriority="high"
+              loading="eager"
             />
           </motion.div>
         </div>
@@ -77,10 +85,13 @@ export default function About() {
       <section className="px-6 md:px-12 max-w-7xl mx-auto py-32">
         <div className="aspect-video overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1920" 
-            alt="Marrakech Inspiration" 
+            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1920&fm=webp" 
+            alt="Architecture et lumière de Marrakech, source d'inspiration photographique" 
             className="w-full h-full object-cover opacity-80"
             referrerPolicy="no-referrer"
+            loading="lazy"
+            width={1920}
+            height={1080}
           />
         </div>
         <div className="mt-8 flex justify-between items-center">

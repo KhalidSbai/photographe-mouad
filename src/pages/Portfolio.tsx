@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
+import SEO from "../components/SEO";
 import imagesData from "../data/images.json";
 const categories = [
   { id: "all", name: "Tout" },
@@ -28,7 +29,13 @@ export default function Portfolio() {
     : items.filter(item => item.category === activeCategory);
 
   return (
-    <div className="pt-40 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <>
+      <SEO
+        title="Portfolio Photographe Marrakech - Sbai Mouad"
+        description="Explorez le portfolio de Sbai Mouad, photographe professionnel à Marrakech : architecture, portraits, événements, nature et mariages au Maroc."
+        canonicalUrl="/portfolio"
+      />
+      <div className="pt-40 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
         <div className="space-y-4">
           <span className="text-[10px] uppercase tracking-[0.3em] opacity-40">Galerie</span>
@@ -37,11 +44,12 @@ export default function Portfolio() {
           </h1>
         </div>
 
-        <nav className="flex flex-wrap gap-6">
+        <nav className="flex flex-wrap gap-6" aria-label="Filtrer le portfolio par catégorie">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
+              aria-pressed={activeCategory === cat.id}
               className={cn(
                 "text-[10px] uppercase tracking-[0.2em] font-bold transition-all border-b-2 pb-1",
                 activeCategory === cat.id ? "border-foreground opacity-100" : "border-transparent opacity-30 hover:opacity-60"
@@ -78,6 +86,9 @@ export default function Portfolio() {
                 alt={`Portfolio ${item.id}`} 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                width={1200}
+                height={1200}
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                 <div className="text-center p-6">
@@ -93,6 +104,7 @@ export default function Portfolio() {
           ))}
         </AnimatePresence>
       </motion.div>
-    </div>
+      </div>
+    </>
   );
 }

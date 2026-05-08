@@ -70,6 +70,9 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
         <button 
           className="md:hidden z-50 p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -79,6 +82,7 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -124,9 +128,9 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
         </div>
         
         <div className="flex gap-8">
-          <a href="#" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Instagram</a>
-          <a href="#" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Behance</a>
-          <a href="#" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Email</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Instagram</a>
+          <a href="https://www.behance.net/" target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Behance</a>
+          <a href="mailto:contact@sbaimouad.com" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Email</a>
         </div>
 
         <div className="text-[10px] uppercase tracking-[0.2em] opacity-40">

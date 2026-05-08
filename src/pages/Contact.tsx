@@ -4,10 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   return (
     <div className="pt-40 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <SEO
+        title="Contact Photographe Marrakech - Sbai Mouad"
+        description="Contactez Sbai Mouad, photographe professionnel à Marrakech, pour un shooting portrait, mode, produit, mariage ou événement au Maroc."
+        canonicalUrl="/contact"
+      />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 md:gap-32">
         <div className="space-y-16">
           <div className="space-y-6">
