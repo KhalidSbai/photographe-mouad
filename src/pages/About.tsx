@@ -2,6 +2,9 @@ import React from "react";
 import { motion } from "motion/react";
 import SEO from "../components/SEO";
 
+const portraitImage = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp";
+const inspirationImage = "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1920&fm=webp";
+
 export default function About() {
   return (
     <div className="pt-40 pb-32">
@@ -51,12 +54,16 @@ export default function About() {
             className="aspect-[4/5] overflow-hidden bg-secondary/20 grayscale hover:grayscale-0 transition-all duration-1000"
           >
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp" 
+              src={portraitImage}
+              srcSet="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=768&fm=webp 768w, https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Sbai Mouad, Photographe Professionnel au Maroc - Portrait" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
               fetchPriority="high"
               loading="eager"
+              width={1200}
+              height={1500}
             />
           </motion.div>
         </div>
@@ -85,7 +92,9 @@ export default function About() {
       <section className="px-6 md:px-12 max-w-7xl mx-auto py-32">
         <div className="aspect-video overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1920&fm=webp" 
+            src={inspirationImage}
+            srcSet="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=960&fm=webp 960w, https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1440&fm=webp 1440w, https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1920&fm=webp 1920w"
+            sizes="100vw"
             alt="Architecture et lumière de Marrakech, source d'inspiration photographique" 
             className="w-full h-full object-cover opacity-80"
             referrerPolicy="no-referrer"

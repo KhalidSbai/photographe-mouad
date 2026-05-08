@@ -4,7 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SEO from "../components/SEO";
+import { getResponsiveImageSrcSet } from "@/lib/images";
 import imagesData from "../data/images.json";
+
+const heroImage = "https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=1600&fm=webp";
 
 const specializations = imagesData
   .filter(category => category.images && category.images.length > 0)
@@ -33,12 +36,16 @@ export default function Home() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <img
-            src="https://images.unsplash.com/photo-1724371959066-307b8ea7e145?q=80&w=1632&auto=format&fit=crop&q=80&w=1200&fm=webp"
+            src={heroImage}
+            srcSet="https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=768&fm=webp 768w, https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w, https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=1600&fm=webp 1600w"
+            sizes="100vw"
             alt="Sbai Mouad, Photographe Professionnel à Marrakech en plein shooting photo"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             fetchPriority="high"
             loading="eager"
+            width={1600}
+            height={1067}
           />
           <div className="absolute inset-0 bg-black/20" />
         </motion.div>
@@ -114,6 +121,8 @@ export default function Home() {
               <div className="aspect-[3/4] overflow-hidden mb-6">
                 <img
                   src={spec.image}
+                  srcSet={getResponsiveImageSrcSet(spec.image)}
+                  sizes="(min-width: 768px) 33vw, 100vw"
                   alt={`Service de ${spec.title} - Photographe Maroc`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"

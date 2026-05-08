@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { getResponsiveImageSrcSet } from "@/lib/images";
 import SEO from "../components/SEO";
 
 const services = [
@@ -9,21 +10,21 @@ const services = [
     id: "01",
     title: "Mode & Éditorial",
     description: "Une approche narrative qui transcende le simple vêtement pour raconter une histoire d'élégance et de caractère. Idéal pour les marques de luxe et les publications de mode.",
-    image: "https://picsum.photos/seed/serv1/1200/1600",
+    image: "/optimized-images/events/IMG_3273 copy.webp",
     details: ["Direction artistique", "Stylisme lumière", "Retouche haute-fidélité"]
   },
   {
     id: "02",
     title: "Portrait d'Art",
     description: "Capturer l'âme derrière le regard. Des séances intimistes où chaque ombre et chaque lumière sont sculptées pour révéler votre essence véritable.",
-    image: "https://picsum.photos/seed/serv2/1200/1600",
+    image: "/optimized-images/portraits/sample1.webp",
     details: ["Séances privées", "Portraits corporate de luxe", "Noir & Blanc artistique"]
   },
   {
     id: "03",
     title: "Produit & Lifestyle",
     description: "Mettre en scène vos créations dans l'atmosphère envoûtante de Marrakech. Une valorisation visuelle qui crée le désir et l'exclusivité.",
-    image: "https://picsum.photos/seed/serv3/1200/1600",
+    image: "/optimized-images/architecture/IMG_8101.webp",
     details: ["Packshot créatif", "Mise en situation", "Contenu réseaux sociaux"]
   }
 ];
@@ -62,6 +63,8 @@ export default function Services() {
                 >
                   <img 
                     src={service.image} 
+                    srcSet={getResponsiveImageSrcSet(service.image)}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     alt={service.title} 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"

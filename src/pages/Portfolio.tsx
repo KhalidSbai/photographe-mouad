@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
+import { getResponsiveImageSrcSet } from "@/lib/images";
 import SEO from "../components/SEO";
 import imagesData from "../data/images.json";
 const categories = [
@@ -20,6 +21,12 @@ const items = imagesData.flatMap((cat, catIndex) =>
     };
   })
 );
+
+const imageDimensions = {
+  wide: { width: 1600, height: 900 },
+  tall: { width: 900, height: 1600 },
+  normal: { width: 1200, height: 1200 },
+};
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -83,12 +90,14 @@ export default function Portfolio() {
             >
               <img 
                 src={item.image} 
+                srcSet={getResponsiveImageSrcSet(item.image)}
+                sizes={item.size === "wide" ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
                 alt={`Portfolio ${item.id}`} 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
                 loading="lazy"
-                width={1200}
-                height={1200}
+                width={imageDimensions[item.size].width}
+                height={imageDimensions[item.size].height}
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                 <div className="text-center p-6">
