@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getResponsiveImageSrcSet } from "@/lib/images";
 import SEO from "../components/SEO";
@@ -30,10 +31,29 @@ const imageDimensions = {
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedItem, setSelectedItem] = useState<(typeof items)[number] | null>(null);
 
   const filteredItems = activeCategory === "all" 
     ? items 
     : items.filter(item => item.category === activeCategory);
+
+  useEffect(() => {
+    if (!selectedItem) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedItem(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [selectedItem]);
 
   return (
     <>
@@ -88,18 +108,25 @@ export default function Portfolio() {
                 "aspect-square"
               )}
             >
-              <img 
-                src={item.image} 
-                srcSet={getResponsiveImageSrcSet(item.image)}
-                sizes={item.size === "wide" ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
-                alt={`Portfolio ${item.id}`} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-                loading="lazy"
-                width={imageDimensions[item.size].width}
-                height={imageDimensions[item.size].height}
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <button
+                type="button"
+                onClick={() => setSelectedItem(item)}
+                className="block w-full h-full text-left"
+                aria-label={`Voir l'image ${item.id} en plein écran`}
+              >
+                <img 
+                  src={item.image} 
+                  srcSet={getResponsiveImageSrcSet(item.image)}
+                  sizes={item.size === "wide" ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
+                  alt={`Portfolio ${item.id}`} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  width={imageDimensions[item.size].width}
+                  height={imageDimensions[item.size].height}
+                />
+              </button>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
                 <div className="text-center p-6">
                   <span className="text-[10px] text-white/60 uppercase tracking-[0.3em] mb-2 block">
                     {item.category}
@@ -114,6 +141,46 @@ export default function Portfolio() {
         </AnimatePresence>
       </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedItem && (
+          <motion.div
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-8"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Image ${selectedItem.id} en plein écran`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedItem(null)}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedItem(null)}
+              className="absolute top-6 right-6 z-10 p-3 text-white/70 hover:text-white transition-colors"
+              aria-label="Fermer l'image"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <motion.img
+              src={selectedItem.image}
+              srcSet={getResponsiveImageSrcSet(selectedItem.image)}
+              sizes="100vw"
+              alt={`Portfolio ${selectedItem.id}`}
+              className="max-w-full max-h-full object-contain"
+              referrerPolicy="no-referrer"
+              width={imageDimensions[selectedItem.size].width}
+              height={imageDimensions[selectedItem.size].height}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.25 }}
+              onClick={(event) => event.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
