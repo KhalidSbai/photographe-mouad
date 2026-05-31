@@ -5,10 +5,7 @@ import { cn } from "@/lib/utils";
 import { getResponsiveImageSrcSet } from "@/lib/images";
 import SEO from "../components/SEO";
 import imagesData from "../data/images.json";
-const categories = [
-  { id: "all", name: "Tout" },
-  ...imagesData.map(cat => ({ id: cat.id, name: cat.name }))
-];
+const categories = imagesData.map(cat => ({ id: cat.id, name: cat.name }));
 
 const items = imagesData.flatMap((cat, catIndex) => 
   cat.images.map((img, index) => {
@@ -30,12 +27,10 @@ const imageDimensions = {
 };
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState(categories[0]?.id ?? "");
   const [selectedItem, setSelectedItem] = useState<(typeof items)[number] | null>(null);
 
-  const filteredItems = activeCategory === "all" 
-    ? items 
-    : items.filter(item => item.category === activeCategory);
+  const filteredItems = items.filter(item => item.category === activeCategory);
 
   useEffect(() => {
     if (!selectedItem) return;
@@ -58,8 +53,8 @@ export default function Portfolio() {
   return (
     <>
       <SEO
-        title="Portfolio Photographe Marrakech - Sbai Mouad"
-        description="Explorez le portfolio de Sbai Mouad, photographe professionnel à Marrakech : architecture, portraits, événements, nature et mariages au Maroc."
+        title="Portfolio Photographe Marrakech - Mouad Sbai"
+        description="Explorez le portfolio de Mouad Sbai, photographe professionnel à Marrakech : architecture, portraits, événements, nature et mariages au Maroc."
         canonicalUrl="/portfolio"
       />
       <div className="pt-40 pb-32 px-6 md:px-12 max-w-7xl mx-auto">

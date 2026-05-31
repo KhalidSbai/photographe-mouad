@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Accueil", href: "/" },
@@ -42,11 +41,12 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
       >
         <Link to="/" className="z-50">
           <motion.span 
-            className="text-xl md:text-2xl font-extrabold tracking-tighter uppercase"
+            className="flex flex-col leading-none uppercase"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Sbai Mouad
+            <span className="text-xl md:text-2xl font-extrabold tracking-tighter">Mouad Sbai</span>
+            <span className="mt-1 text-[9px] md:text-[10px] font-medium tracking-[0.35em] opacity-60">Photographe</span>
           </motion.span>
         </Link>
 
@@ -123,14 +123,14 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
       {/* Footer */}
       <footer className="px-6 md:px-12 py-12 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <span className="text-sm font-extrabold uppercase tracking-tighter">Sbai Mouad</span>
+          <span className="text-sm font-extrabold uppercase tracking-tighter">Mouad Sbai</span>
           <span className="text-[10px] uppercase tracking-[0.2em] opacity-40">© 2024 Marrakech, Maroc</span>
         </div>
         
         <div className="flex gap-8">
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Instagram</a>
           <a href="https://www.behance.net/" target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Behance</a>
-          <a href="mailto:contact@sbaimouad.com" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Email</a>
+          <a href="mailto:sbaimouad1@gmail.com" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Email</a>
         </div>
 
         <div className="text-[10px] uppercase tracking-[0.2em] opacity-40">

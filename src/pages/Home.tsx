@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className="space-y-32 pb-32">
       <SEO 
-        title="Sbai Mouad - Photographe Professionnel à Marrakech & Maroc"
-        description="Découvrez l'univers de Sbai Mouad, photographe professionnel à Marrakech. Spécialisé en photographie de mode, portrait, et reportage de mariage au Maroc."
+        title="Mouad Sbai - Photographe Professionnel à Marrakech & Maroc"
+        description="Découvrez l'univers de Mouad Sbai, photographe professionnel à Marrakech. Spécialisé en photographie de mode, portrait, et reportage de mariage au Maroc."
         canonicalUrl="/"
       />
       {/* Hero Section */}
@@ -39,7 +39,7 @@ export default function Home() {
             src={heroImage}
             srcSet="https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=768&fm=webp 768w, https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w, https://images.unsplash.com/photo-1724371959066-307b8ea7e145?auto=format&fit=crop&q=80&w=1600&fm=webp 1600w"
             sizes="100vw"
-            alt="Sbai Mouad, Photographe Professionnel à Marrakech en plein shooting photo"
+            alt="Mouad Sbai, Photographe Professionnel à Marrakech en plein shooting photo"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             fetchPriority="high"
@@ -167,7 +167,7 @@ export default function Home() {
           <p className="text-2xl md:text-4xl font-light italic leading-relaxed mb-12">
             "La photographie n'est pas ce que l'on voit, mais ce que l'on ressent. Lors d'un shooting photo au Maroc ou pour un événement à Marrakech, la lumière raconte des histoires que seul le silence peut entendre."
           </p>
-          <span className="text-xs uppercase tracking-[0.3em] font-bold">— Sbai Mouad</span>
+          <span className="text-xs uppercase tracking-[0.3em] font-bold">— Mouad Sbai</span>
         </motion.div>
       </section>
     </div>

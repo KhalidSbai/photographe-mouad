@@ -34,7 +34,7 @@ export default function Services() {
     <div className="pt-40 pb-32">
       <SEO
         title="Services Photographe Marrakech - Mode, Portrait & Lifestyle"
-        description="Services photo professionnels à Marrakech avec Sbai Mouad : mode éditoriale, portrait d'art, produit, lifestyle et contenu visuel pour marques au Maroc."
+        description="Services photo professionnels à Marrakech avec Mouad Sbai : mode éditoriale, portrait d'art, produit, lifestyle et contenu visuel pour marques au Maroc."
         canonicalUrl="/services"
       />
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">

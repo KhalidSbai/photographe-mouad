@@ -7,8 +7,8 @@ export default function NotFound() {
   return (
     <div className="pt-40 pb-32 px-6 md:px-12 max-w-7xl mx-auto min-h-[70vh] flex items-center">
       <SEO
-        title="Page introuvable - Sbai Mouad Photographe Marrakech"
-        description="La page demandée est introuvable. Retrouvez le portfolio, les services et les informations de contact de Sbai Mouad, photographe à Marrakech."
+        title="Page introuvable - Mouad Sbai Photographe Marrakech"
+        description="La page demandée est introuvable. Retrouvez le portfolio, les services et les informations de contact de Mouad Sbai, photographe à Marrakech."
         canonicalUrl="/404"
       />
       <section className="max-w-3xl space-y-8">

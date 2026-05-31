@@ -9,8 +9,8 @@ export default function About() {
   return (
     <div className="pt-40 pb-32">
       <SEO 
-        title="À Propos - Sbai Mouad Photographe Maroc"
-        description="Découvrez l'histoire et la philosophie de Sbai Mouad, photographe professionnel basé à Marrakech. Un regard unique sur la photographie de portrait et de mode au Maroc."
+        title="À Propos - Mouad Sbai Photographe Maroc"
+        description="Découvrez l'histoire et la philosophie de Mouad Sbai, photographe professionnel basé à Marrakech. Un regard unique sur la photographie de portrait et de mode au Maroc."
         canonicalUrl="/about"
       />
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
@@ -19,7 +19,7 @@ export default function About() {
             <div>
               <span className="text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6 block">L'Âme derrière l'objectif - Photographe Maroc</span>
               <h1 className="text-5xl md:text-8xl font-extrabold tracking-tighter uppercase leading-[0.9]">
-                Sbai <br /> Mouad
+                Mouad <br /> Sbai
               </h1>
             </div>
             
@@ -57,7 +57,7 @@ export default function About() {
               src={portraitImage}
               srcSet="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=768&fm=webp 768w, https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w"
               sizes="(min-width: 1024px) 50vw, 100vw"
-              alt="Sbai Mouad, Photographe Professionnel au Maroc - Portrait" 
+              alt="Mouad Sbai, Photographe Professionnel au Maroc - Portrait" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
               fetchPriority="high"
