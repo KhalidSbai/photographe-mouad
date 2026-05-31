@@ -9,7 +9,7 @@ interface SEOProps {
   schemaData?: object | object[];
 }
 
-const siteUrl = 'https://www.sbaimouad.com';
+const siteUrl = 'https://mouadsbai.com';
 const defaultOgImage = `${siteUrl}/logo/logo.png`; // URL par défaut si pas d'image spécifiée
 
 export default function SEO({ title, description, canonicalUrl, ogImage, schemaData }: SEOProps) {

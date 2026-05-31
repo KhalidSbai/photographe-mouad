@@ -128,6 +128,7 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
         </div>
         
         <div className="flex gap-8">
+          <Link to="/photographe-marrakech" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Photographe Marrakech</Link>
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Instagram</a>
           <a href="https://www.behance.net/" target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Behance</a>
           <a href="mailto:sbaimouad1@gmail.com" className="text-[10px] uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity">Email</a>

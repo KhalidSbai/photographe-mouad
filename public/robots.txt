@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sbaimouad.com/sitemap.xml
+Sitemap: https://mouadsbai.com/sitemap.xml
