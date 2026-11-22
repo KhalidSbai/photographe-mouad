@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import SEO from "../components/SEO";
 
-const portraitImage = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp";
+const portraitImage = "/images/mouad_sbai.webp";
 const inspirationImage = "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1920&fm=webp";
 
 export default function About() {
@@ -55,15 +55,13 @@ export default function About() {
           >
             <img 
               src={portraitImage}
-              srcSet="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=768&fm=webp 768w, https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w"
-              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Mouad Sbai, Photographe Professionnel au Maroc - Portrait" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
               fetchPriority="high"
               loading="eager"
-              width={1200}
-              height={1500}
+              width={1184}
+              height={1200}
             />
           </motion.div>
         </div>
